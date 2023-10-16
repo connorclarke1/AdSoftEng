@@ -1,19 +1,30 @@
 using System;
-using System.Numerics;
 
-namespace BMITest;
+namespace BMICalculatorSpace
 {
-    class BMIClass
+    class BMICalculator
     {
-        static void Main(string[] args)
+        private static string userHeightStr, userWeightStr;
+        static void Main()
         {
-            RunBMICheck Test = new RunBMICheck();
+            GetUserInfo();
+            CalculateBMI();
         }
-        public RunBMICheck(){
-        global::System.Object value = Console.Writeline("""Please Enter Weight in Kg:""");
+
+        static void GetUserInfo(){
+            Console.WriteLine("Please Enter Your Weight in Kg:");
+            userWeightStr = Console.ReadLine();
+            Console.WriteLine("Please Enter Your Height in CM:");
+            userHeightStr = Console.ReadLine();
+        }
+        
+        static void CalculateBMI(){
+            float userWeightFloat = Single.Parse(userWeightStr);
+            float userHeightFloat = Single.Parse(userHeightStr);
+            float BMI = userWeightFloat/((userHeightFloat/100)*(userHeightFloat/100));
+            string BMIStr = BMI.ToString();
+            Console.WriteLine($"Your BMI is {BMIStr}");
+
         }
     }
-
 }
-
-BMIClass myBMIClass = new BMIClass();
