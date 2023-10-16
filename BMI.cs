@@ -14,7 +14,7 @@ namespace BMICalculatorSpace
         static void GetUserInfo(){
             Console.WriteLine("Please Enter Your Weight in Kg:");
             userWeightStr = Console.ReadLine();
-            Console.WriteLine("Please Enter Your Height in cm:");
+            Console.WriteLine("Please Enter Your Height in CM:");
             userHeightStr = Console.ReadLine();
         }
         
